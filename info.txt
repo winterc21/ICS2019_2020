@@ -1,3 +1,7 @@
 Name: Coen Winter
+<<<<<<< HEAD
 Course: Integrated CompSci
+=======
+Course: ICS
+>>>>>>> 4c6f30507d51b0ea825dfa5eaf613f325ecd2f78
 Date: September 06 2019  
