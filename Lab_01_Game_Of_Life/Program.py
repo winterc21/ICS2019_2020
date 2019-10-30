@@ -27,18 +27,6 @@ def showCA(ca, wait=0):
     out[ca==0]=(0,0,0)
     show(out, wait=wait)
 
-# ~ caInitPic = cv2.imread('CA_1.png', 0) # the 0 says to import the image in grayscale
-
-# ~ L0 = caInitPic.shape[0] # get the height and width of the image if it's not a square
-# ~ L1 = caInitPic.shape[1]
-
-# ~ ca = np.zeros((L0,L1))
-
-
-# ~ # anything closer to black than to white in the image becomes a 1. Otherwise it stays 0.
-# ~ ca[caInitPic<128]=1	
-# ~ ca[caInitPic>128]=0
-
 
 def load(filename):
     img=cv2.imread(filename)
@@ -49,17 +37,6 @@ def load(filename):
     return out
 
 
-# ~ def iterate(ca):
-    # ~ newCa=ca*1
-    # ~ kernel=np.int16([[1,1,1],
-                     # ~ [1,0,1],
-                     # ~ [1,1,1]])
-    # ~ whereTheLiveAre=np.int16(ca==live)
-    # ~ neighborCount=cv2.filter2D(whereTheLiveAre,-1,kernel,borderType=cv2.BORDER_CONSTANT)
-    # ~ newCa[ca==1]=1
-    # ~ newCa[ca==0]=0
-    # ~ newCa[np.logical_and(np.logical_and(ca==1,2<=neighborCount),neighborCount<=3)]=1
-    # ~ return newCa    
 
 
 def iterate(ca):
@@ -88,16 +65,6 @@ def iterate(ca):
                 newCa [i][j]=0
     return newCa
     
-# ~ ca = np.array([[0,0,0,0,0,0,0,0,0,0],
-                # ~ [0,0,0,0,0,0,0,0,0,0],
-                # ~ [0,0,0,0,0,0,0,0,0,0],
-                # ~ [0,0,0,0,0,0,0,0,0,0],
-                # ~ [0,0,0,0,0,0,0,0,0,0],
-                # ~ [0,0,1,1,1,0,0,0,0,0],
-                # ~ [0,1,0,0,1,0,0,0,0,0],
-                # ~ [0,0,0,0,1,0,0,0,0,0],
-                # ~ [0,1,0,0,1,0,0,0,0,0],
-                # ~ [0,0,0,1,0,0,0,0,0,0]])
 
 
 ca=load("CA_1.png")
